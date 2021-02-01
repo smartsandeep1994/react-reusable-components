@@ -1,11 +1,11 @@
 import React from 'react';
-import axios from 'axios';
 
 export default class Fetch extends React.Component{
     constructor(props){
       super(props);
       this.state = {
           content:[],
+          postLength:'',
       }
     }
     componentDidMount(){
@@ -19,6 +19,7 @@ export default class Fetch extends React.Component{
             console.log(ress.data);
             this.setState({ content: ress.data });
             this.setState({ postLength: ress.data.length });
+            localStorage.setItem('length', JSON.stringify(ress.data.length))
         })
         .catch(err=>console.log(err));
     }
