@@ -12,9 +12,15 @@ export default class Apps extends React.Component{
             url:'',
             Load:true,
             Load2:true,
-            postLength:20,
-            postTwoLength:20
+            postLength:0,
+            postTwoLength:0
         }
+    }
+    componentDidMount(){
+      var x = localStorage.getItem("length");
+      console.log(x);
+      this.setState({postLength:x});
+      this.setState({postTwoLength:x});
     }
 
     loadMore = (oldValue) => {
@@ -55,7 +61,6 @@ export default class Apps extends React.Component{
             
             <ReusableListing url="https://gorest.co.in/public-api/posts">
                 {(data) => {
-                    // {this.setState({ posts: data })}
                     return data.slice(0,this.state.visible).map((value, index) => {
                         // return <li key={value.id}>{value.title}</li>
                         return (
