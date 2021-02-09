@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.View_profile{
+  
+}
+
+.modal_top_right {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  background-color: red !important;
+  color: #fff;
+  padding: 8px;
+}
